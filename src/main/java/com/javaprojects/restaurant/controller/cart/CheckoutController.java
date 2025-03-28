@@ -1,11 +1,14 @@
-package com.javaprojects.restaurant.controller;
+package com.javaprojects.restaurant.controller.cart;
 
-import com.javaprojects.restaurant.model.Cart;
-import com.javaprojects.restaurant.model.Order;
-import com.javaprojects.restaurant.model.OrderItem;
-import com.javaprojects.restaurant.repository.OrderRepository;
-import com.javaprojects.restaurant.service.CartService;
+import com.javaprojects.restaurant.model.cart.Cart;
+import com.javaprojects.restaurant.model.order.Order;
+import com.javaprojects.restaurant.model.order.OrderItem;
+import com.javaprojects.restaurant.model.user.User;
+import com.javaprojects.restaurant.repository.order.OrderRepository;
+import com.javaprojects.restaurant.service.cart.CartService;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +29,13 @@ public class CheckoutController {
 
     @PostMapping
     public String checkout(HttpSession session) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return "User not authenticated";
+        }
+
+        User user = (User) authentication.getPrincipal();
+
         Cart cart = cartService.getCart(session);
         if(cart.getItems().isEmpty()) {
             return "Cart is empty";
@@ -41,7 +51,7 @@ public class CheckoutController {
 
         double totalPrice = cart.getTotalPrice();
 
-        Order order = new Order(totalPrice, orderItems);
+        Order order = new Order(totalPrice, orderItems, user);
 
         for (OrderItem orderItem : orderItems) {
             orderItem.setOrder(order);

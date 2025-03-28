@@ -1,6 +1,6 @@
-package com.javaprojects.restaurant.repository;
+package com.javaprojects.restaurant.repository.order;
 
-import com.javaprojects.restaurant.model.OrderItem;
+import com.javaprojects.restaurant.model.order.OrderItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

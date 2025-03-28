@@ -1,9 +1,9 @@
-package com.javaprojects.restaurant.controller;
+package com.javaprojects.restaurant.controller.restaurant;
 
-import com.javaprojects.restaurant.model.Category;
-import com.javaprojects.restaurant.model.Product;
-import com.javaprojects.restaurant.service.CategoryService;
-import com.javaprojects.restaurant.service.ProductService;
+import com.javaprojects.restaurant.model.restaurant.Category;
+import com.javaprojects.restaurant.model.restaurant.Product;
+import com.javaprojects.restaurant.service.restaurant.CategoryService;
+import com.javaprojects.restaurant.service.restaurant.ProductService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

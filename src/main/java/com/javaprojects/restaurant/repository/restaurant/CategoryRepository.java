@@ -1,6 +1,6 @@
-package com.javaprojects.restaurant.repository;
+package com.javaprojects.restaurant.repository.restaurant;
 
-import com.javaprojects.restaurant.model.Category;
+import com.javaprojects.restaurant.model.restaurant.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

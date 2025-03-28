@@ -1,12 +1,9 @@
-package com.javaprojects.restaurant.service;
+package com.javaprojects.restaurant.service.cart;
 
-import com.javaprojects.restaurant.model.Cart;
-import com.javaprojects.restaurant.model.CartItem;
-import com.javaprojects.restaurant.model.Product;
+import com.javaprojects.restaurant.model.cart.Cart;
+import com.javaprojects.restaurant.model.restaurant.Product;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class CartService {

@@ -1,8 +1,7 @@
-package com.javaprojects.restaurant.service;
+package com.javaprojects.restaurant.service.restaurant;
 
-import com.javaprojects.restaurant.model.Category;
-import com.javaprojects.restaurant.model.Product;
-import com.javaprojects.restaurant.repository.ProductRepository;
+import com.javaprojects.restaurant.model.restaurant.Product;
+import com.javaprojects.restaurant.repository.restaurant.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

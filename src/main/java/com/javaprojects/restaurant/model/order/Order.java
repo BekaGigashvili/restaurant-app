@@ -1,5 +1,6 @@
-package com.javaprojects.restaurant.model;
+package com.javaprojects.restaurant.model.order;
 
+import com.javaprojects.restaurant.model.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,8 +25,13 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> items;
 
-    public Order(double totalPrice, List<OrderItem> orderItems) {
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    public Order(double totalPrice, List<OrderItem> orderItems, User user) {
         this.totalPrice = totalPrice;
         this.items = orderItems;
+        this.user = user;
     }
 }

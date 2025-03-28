@@ -1,7 +1,7 @@
-package com.javaprojects.restaurant.controller;
+package com.javaprojects.restaurant.controller.restaurant;
 
-import com.javaprojects.restaurant.model.Category;
-import com.javaprojects.restaurant.service.CategoryService;
+import com.javaprojects.restaurant.model.restaurant.Category;
+import com.javaprojects.restaurant.service.restaurant.CategoryService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -1,5 +1,6 @@
-package com.javaprojects.restaurant.model;
+package com.javaprojects.restaurant.model.cart;
 
+import com.javaprojects.restaurant.model.restaurant.Product;
 import lombok.Data;
 
 @Data

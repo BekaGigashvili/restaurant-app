@@ -1,4 +1,4 @@
-package com.javaprojects.restaurant.model;
+package com.javaprojects.restaurant.model.restaurant;
 
 import jakarta.persistence.*;
 import lombok.*;
