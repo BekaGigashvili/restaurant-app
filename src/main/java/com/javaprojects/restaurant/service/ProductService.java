@@ -23,4 +23,8 @@ public class ProductService {
     public List<Product> findAllByCategoryName(String categoryName) {
         return productRepository.findAllByCategoryName(categoryName);
     }
+
+    public List<Product> findAll() {
+        return productRepository.findAll();
+    }
 }
